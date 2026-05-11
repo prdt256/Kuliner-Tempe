@@ -1,149 +1,99 @@
 <!-- ==================================================
-     PENGOLAHAN TEMPE
+     PENGOLAHAN TEMPE - PREMIUM DESIGN
 =================================================== -->
-<section class="pengolahan-tempe" id="pengolahan-tempe">
-    <div class="section-head">
-        <h2>Pengolahan Tempe</h2>
-        <p class="sub">
-            Tempe itu fleksibel: bisa jadi menu cepat harian, bisa juga jadi stok mingguan.
-            Di bawah ini kita bahas dengan jelas biar kamu nggak bingung mau mulai dari mana.
-        </p>
-    </div>
-
-    <div class="olah-summary">
-        <div class="olah-summary-text">
-            <h3>Intinya simpel</h3>
-            <p>
-                Tentukan dulu tujuanmu: <strong>mau cepat untuk hari ini</strong> atau <strong>mau stok untuk beberapa hari</strong>.
-                Setelah itu pilih teknik masak yang sesuai. Dengan cara ini, satu papan tempe bisa jadi banyak menu tanpa bikin bosan.
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="pengolahan-tempe">
+    <div class="max-w-max-width mx-auto">
+        <div class="text-center mb-xl">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">Teknik Pengolahan</h2>
+            <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto mt-sm">
+                Tempe itu fleksibel: bisa jadi menu cepat harian, bisa juga jadi stok mingguan. 
+                Pilih gaya masak yang paling sesuai dengan waktu kamu.
             </p>
         </div>
 
-        <div class="olah-summary-gallery">
-            <figure class="olah-shot">
-                <img src="media/tempe goreng.jpg" alt="Tempe goreng" />
-                <figcaption>Goreng cepat</figcaption>
-            </figure>
-
-            <figure class="olah-shot">
-                <img src="media/tumis tempe 1.jpg" alt="Tempe tumis" />
-                <figcaption>Tumis bumbu</figcaption>
-            </figure>
-
-            <figure class="olah-shot">
-                <img src="media/tempe bacem 1.jpg" alt="Tempe bacem" />
-                <figcaption>Bacem / ungkep</figcaption>
-            </figure>
-
-            <figure class="olah-shot">
-                <img src="media/tempe krispi.jpg" alt="Tempe crispy" />
-                <figcaption>Crispy / panggang</figcaption>
-            </figure>
-        </div>
-    </div>
-
-    <div class="olah-frame">
-        <div class="olah-block">
-            <h3 class="olah-title">Tempe bisa diolah jadi apa aja?</h3>
-            <p class="olah-desc">Pilih gaya masak sesuai kebutuhan dan waktu kamu.</p>
-
-            <div class="olah-kategori-grid">
-                <article class="olah-kategori-card">
-                    <div class="olah-kategori-head">
-                        <span class="olah-emoji">🍳</span>
-                        <div>
-                            <h4>Masak Cepat (Harian)</h4>
-                            <p class="mini">10-15 menit • cocok kalau mepet</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Tempe goreng + sambal</li>
-                        <li>Tempe tumis kecap</li>
-                        <li>Tempe penyet</li>
-                    </ul>
-                </article>
-
-                <article class="olah-kategori-card">
-                    <div class="olah-kategori-head">
-                        <span class="olah-emoji">🥘</span>
-                        <div>
-                            <h4>Masak Matang (Stok)</h4>
-                            <p class="mini">30-45 menit • hemat untuk beberapa hari</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Tempe bacem (bumbu meresap)</li>
-                        <li>Orek tempe kering (tahan lama)</li>
-                        <li>Tempe bumbu ungkep</li>
-                    </ul>
-                </article>
-
-                <article class="olah-kategori-card">
-                    <div class="olah-kategori-head">
-                        <span class="olah-emoji">🔥</span>
-                        <div>
-                            <h4>Panggang / Crispy</h4>
-                            <p class="mini">15-25 menit • buat camilan & lauk</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Tempe crispy (tepung tipis)</li>
-                        <li>Tempe oven/panggang bumbu</li>
-                        <li>Tempe katsu versi hemat</li>
-                    </ul>
-                </article>
-
-                <article class="olah-kategori-card">
-                    <div class="olah-kategori-head">
-                        <span class="olah-emoji">❄️</span>
-                        <div>
-                            <h4>Simpan & Panaskan</h4>
-                            <p class="mini">praktis • cocok anak kos</p>
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Tempe ungkep → simpan kulkas</li>
-                        <li>Orek kering → wadah tertutup</li>
-                        <li>Frozen tempe bumbu (opsional)</li>
-                    </ul>
-                </article>
+        <!-- Category Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xl">
+            <!-- Cepat -->
+            <div class="p-lg bg-surface border border-outline-variant/30 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 bg-primary-container rounded-2xl flex items-center justify-center mb-md shadow-sm">
+                    <span class="material-symbols-outlined text-on-primary-container">timer</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-xs">Masak Cepat</h3>
+                <p class="text-body-sm text-on-surface-variant mb-md">10-15 menit • Cocok saat mepet.</p>
+                <ul class="space-y-2 text-body-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Tempe Goreng Sambal</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Tumis Tempe Kecap</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Tempe Penyet</li>
+                </ul>
             </div>
-        </div>
-    </div>
-
-    <div class="olah-tipbar">
-        <div class="tipbar-head">
-            <h3>💡 Tips Anak Kos Biar Makin Hemat</h3>
-            <p>Ini bagian yang biasanya bikin kamu selangkah lebih hemat.</p>
-        </div>
-
-        <div class="tips-grid">
-            <div class="tips-card">
-                <h4>Jangan goreng semua</h4>
-                <p>Goreng secukupnya. Sisanya bisa tumis besok biar nggak bosan.</p>
+            <!-- Stok -->
+            <div class="p-lg bg-surface border border-outline-variant/30 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 bg-tertiary-container rounded-2xl flex items-center justify-center mb-md shadow-sm">
+                    <span class="material-symbols-outlined text-on-tertiary-container">inventory</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-xs">Masak Stok</h3>
+                <p class="text-body-sm text-on-surface-variant mb-md">30-45 menit • Hemat seminggu.</p>
+                <ul class="space-y-2 text-body-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Tempe Bacem</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Orek Tempe Kering</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-tertiary rounded-full"></span> Tempe Bumbu Ungkep</li>
+                </ul>
             </div>
-
-            <div class="tips-card">
-                <h4>Bumbu 1 kali untuk 3 menu</h4>
-                <p>Bawang + garam + kecap bisa jadi base: goreng, tumis, sampai orek.</p>
+            <!-- Crispy -->
+            <div class="p-lg bg-surface border border-outline-variant/30 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center mb-md shadow-sm">
+                    <span class="material-symbols-outlined text-on-secondary-container">skillet</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-xs">Crispy & Oven</h3>
+                <p class="text-body-sm text-on-surface-variant mb-md">15-25 menit • Camilan & lauk.</p>
+                <ul class="space-y-2 text-body-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Tempe Crispy</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Tempe Panggang</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Tempe Katsu Hemat</li>
+                </ul>
             </div>
-
-            <div class="tips-card">
-                <h4>Orek kering = penyelamat</h4>
-                <p>Masak sekali, simpan. Tinggal ambil nasi saat lagi males masak.</p>
-            </div>
-
-            <div class="tips-card">
-                <h4>Tempe + sayur = gizi lengkap</h4>
-                <p>Tambah sawi/wortel/kol biar ada serat dan lebih “sehat anak kos”.</p>
+            <!-- Simpan -->
+            <div class="p-lg bg-surface border border-outline-variant/30 rounded-3xl hover:shadow-lg transition-all hover:-translate-y-1">
+                <div class="w-12 h-12 bg-surface-container-high rounded-2xl flex items-center justify-center mb-md shadow-sm">
+                    <span class="material-symbols-outlined text-on-surface-variant">ac_unit</span>
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-xs">Penyimpanan</h3>
+                <p class="text-body-sm text-on-surface-variant mb-md">Praktis • Awet lebih lama.</p>
+                <ul class="space-y-2 text-body-sm">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full"></span> Simpan di Kulkas</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full"></span> Wadah Kedap Udara</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full"></span> Frozen Tempe</li>
+                </ul>
             </div>
         </div>
 
-        <div class="tips-highlight">
-            <p>
-                ✅ <strong>Rekomendasi aman:</strong> kalau kamu baru belajar, mulai dari
-                <strong>tempe goreng bumbu</strong> → naik ke <strong>tumis kecap</strong> → baru coba <strong>orek kering/bacem</strong>.
-            </p>
+        <!-- Tips Section -->
+        <div class="bg-surface p-xl rounded-[2.5rem] border border-outline-variant/30 shadow-xl">
+            <div class="flex items-center gap-2 mb-lg">
+                <span class="material-symbols-outlined text-primary">lightbulb</span>
+                <h3 class="font-headline-md text-primary font-bold">Tips Hemat Ala Anak Kos</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+                <div class="p-4 rounded-2xl bg-surface-container-low/50">
+                    <h4 class="font-label-bold text-on-surface mb-xs">Jangan Goreng Semua</h4>
+                    <p class="text-body-sm text-on-surface-variant">Goreng secukupnya, sisanya tumis besok biar nggak bosan.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-surface-container-low/50">
+                    <h4 class="font-label-bold text-on-surface mb-xs">Bumbu 1 untuk 3</h4>
+                    <p class="text-body-sm text-on-surface-variant">Bawang + garam + kecap bisa jadi base goreng, tumis, & orek.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-surface-container-low/50">
+                    <h4 class="font-label-bold text-on-surface mb-xs">Orek Kering Penyelamat</h4>
+                    <p class="text-body-sm text-on-surface-variant">Masak sekali, simpan lama. Solusi malas masak di akhir bulan.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-surface-container-low/50">
+                    <h4 class="font-label-bold text-on-surface mb-xs">Tempe + Sayur</h4>
+                    <p class="text-body-sm text-on-surface-variant">Tambah sawi/wortel biar gizi lengkap dan makin kenyang.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-12 bg-gradient-to-b from-surface-container-low to-surface"></div>

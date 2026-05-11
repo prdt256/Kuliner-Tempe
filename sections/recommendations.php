@@ -1,260 +1,108 @@
 <!-- ==================================================
-     REKOMENDASI MENU + KULINER
+     REKOMENDASI MENU & KULINER - PREMIUM DESIGN
 =================================================== -->
-<section class="rekomendasi" id="rekomendasi">
-    <div class="section-head">
-        <h2>Rekomendasi Menu Tempe</h2>
-        <p class="sub">Pilih sesuai kebutuhan: harian, mingguan, atau bulanan. Klik untuk lihat cara masak.</p>
-    </div>
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="rekomendasi">
+    <div class="max-w-max-width mx-auto">
+        <div class="flex justify-between items-end mb-xl">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">Rekomendasi Menu</h2>
+                <p class="font-body-md text-on-surface-variant mt-sm">Pilih menu favoritmu sesuai budget dan waktu.</p>
+            </div>
+        </div>
 
-    <div class="menu-grid modern">
-        <!-- CARD 1 -->
-        <article class="menu-card2">
-            <div class="menu-media">
-                <img src="media/resep 4.jpg" alt="Tempe Bacem" />
-                <div class="menu-overlay">
-                    <span class="tag harian">Harian</span>
-                    <span class="meta">± 10 menit • Rp 10-15k</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+            <!-- Menu 1 -->
+            <article class="group bg-surface-container-lowest rounded-3xl overflow-hidden transition-all hover:shadow-xl border border-outline-variant/30">
+                <div class="h-56 relative overflow-hidden">
+                    <img src="media/resep 4.jpg" alt="Tempe Bacem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <span class="absolute top-4 left-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold">Harian</span>
+                </div>
+                <div class="p-lg">
+                    <h3 class="font-headline-md text-headline-md mb-xs">Tempe Bacem Legit</h3>
+                    <p class="text-body-sm text-on-surface-variant mb-md">Menu cepat, bumbu meresap, cocok buat lauk harian hemat.</p>
+                    <div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-md border-t border-outline-variant/20">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 10m</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">payments</span> Rp 10-15k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Menu 2 -->
+            <article class="group bg-surface-container-lowest rounded-3xl overflow-hidden transition-all hover:shadow-xl border border-outline-variant/30">
+                <div class="h-56 relative overflow-hidden">
+                    <img src="media/resep 5.jpg" alt="Tempe Katsu" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <span class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-xs font-bold">Mingguan</span>
+                </div>
+                <div class="p-lg">
+                    <h3 class="font-headline-md text-headline-md mb-xs">Tempe Katsu Renyah</h3>
+                    <p class="text-body-sm text-on-surface-variant mb-md">Varian modern ala Jepang yang super renyah dan ekonomis.</p>
+                    <div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-md border-t border-outline-variant/20">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 20m</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">payments</span> Rp 15-20k</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Menu 3 -->
+            <article class="group bg-surface-container-lowest rounded-3xl overflow-hidden transition-all hover:shadow-xl border border-outline-variant/30">
+                <div class="h-56 relative overflow-hidden">
+                    <img src="media/resep 1.jpg" alt="Tumis Sayur Tempe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">Lengkap</span>
+                </div>
+                <div class="p-lg">
+                    <h3 class="font-headline-md text-headline-md mb-xs">Tumis Sayur Tempe</h3>
+                    <p class="text-body-sm text-on-surface-variant mb-md">Komposisi gizi lengkap dengan sayuran segar pilihan.</p>
+                    <div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-md border-t border-outline-variant/20">
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">schedule</span> 35m</span>
+                        <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">payments</span> Rp 20-25k</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Kuliner Section -->
+        <div class="mt-xl">
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">storefront</span> Kuliner Hemat Terdekat
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+                <!-- Place 1 -->
+                <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
+                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                        <img src="media/tempe penyet.jpg" alt="Penyetan" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h4 class="font-label-bold text-on-surface">Penyetan Mas Ipin</h4>
+                        <p class="text-xs text-on-surface-variant mb-sm">Rp 10-18k • Pedas Mantap</p>
+                        <a href="https://maps.app.goo.gl/VhZ7hbbqqfULPTS56" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+                    </div>
+                </div>
+                <!-- Place 2 -->
+                <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
+                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                        <img src="media/tempe mendoan.jpg" alt="Burjo" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h4 class="font-label-bold text-on-surface">Burjo Nongol</h4>
+                        <p class="text-xs text-on-surface-variant mb-sm">Rp 8-15k • Enak Buat Nongkrong</p>
+                        <a href="https://maps.app.goo.gl/oMuWYhfCRHs2EFWz6" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+                    </div>
+                </div>
+                <!-- Place 3 -->
+                <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
+                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+                        <img src="media/resep 8.jpg" alt="Warung" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <h4 class="font-label-bold text-on-surface">Dapur Karuni</h4>
+                        <p class="text-xs text-on-surface-variant mb-sm">Rp 12-22k • Porsi Kenyang</p>
+                        <a href="https://maps.app.goo.gl/kx9NXwtgEQXsS8vW7" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+                    </div>
                 </div>
             </div>
-            <div class="menu-content">
-                <h3>Tempe Bacem</h3>
-                <p class="desc">Menu cepat, bumbu meresap, cocok buat lauk harian.</p>
-
-                <details class="accordion">
-                    <summary>Lihat cara masak</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Bahan</h4>
-                                <ul>
-                                    <li>Tempe 1 papan</li>
-                                    <li>Bawang putih 2 siung</li>
-                                    <li>Garam secukupnya</li>
-                                    <li>Kecap/gula merah (opsional)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Langkah</h4>
-                                <ol>
-                                    <li>Potong tempe, bumbui.</li>
-                                    <li>Masak/ungkep sebentar (opsional).</li>
-                                    <li>Goreng hingga kecokelatan, sajikan.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-            </div>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="menu-card2">
-            <div class="menu-media">
-                <img src="media/resep 5.jpg" alt="Tempe Katsu" />
-                <div class="menu-overlay">
-                    <span class="tag mingguan">Mingguan</span>
-                    <span class="meta">± 20 menit • Rp 15–20k</span>
-                </div>
-            </div>
-            <div class="menu-content">
-                <h3>Tempe Katsu</h3>
-                <p class="desc">Renyah ala Jepang, cocok meal-prep beberapa hari.</p>
-
-                <details class="accordion">
-                    <summary>Lihat cara masak</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Bahan</h4>
-                                <ul>
-                                    <li>Tempe</li>
-                                    <li>Tepung + telur (opsional)</li>
-                                    <li>Tepung roti</li>
-                                    <li>Saus (BBQ/teriyaki)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Langkah</h4>
-                                <ol>
-                                    <li>Iris tempe, bumbui.</li>
-                                    <li>Balur tepung-telur-tepung roti.</li>
-                                    <li>Goreng/panggang, siram saus.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-            </div>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="menu-card2">
-            <div class="menu-media">
-                <img src="media/resep 1.jpg" alt="Tumis Sayur Tempe" />
-                <div class="menu-overlay">
-                    <span class="tag bulanan">Bulanan</span>
-                    <span class="meta">± 35 menit • Rp 20-25k</span>
-                </div>
-            </div>
-            <div class="menu-content">
-                <h3>Tumis Sayur Tempe</h3>
-                <p class="desc">Komplit dan fleksibel: tempe + sayur, cocok biar nggak bosan.</p>
-
-                <details class="accordion">
-                    <summary>Lihat cara masak</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Bahan</h4>
-                                <ul>
-                                    <li>Tempe</li>
-                                    <li>Sayur (buncis/wortel/kol)</li>
-                                    <li>Bawang + garam</li>
-                                    <li>Kecap/saus tiram (opsional)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Langkah</h4>
-                                <ol>
-                                    <li>Tumis bumbu, masukkan tempe.</li>
-                                    <li>Masukkan sayur, bumbui.</li>
-                                    <li>Masak hingga matang, sajikan.</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-            </div>
-        </article>
-    </div>
-
-    <div class="divider-text">
-        <p>🍽️ Kalau lagi nggak sempat masak, ini rekomendasi tempat hemat:</p>
-    </div>
-
-    <div class="kuliner-grid2">
-        <!-- TEMPAT 1 -->
-        <article class="place-card2">
-            <div class="place-media2">
-                <img src="media/tempe penyet.jpg" alt="Penyetan Mas Ipin" />
-                <div class="place-overlay2">
-                    <span class="tag-place">Kuliner</span>
-                    <span class="meta-place">Rp 10-18k • cepat</span>
-                </div>
-            </div>
-            <div class="place-content2">
-                <h4>Penyetan Mas Ipin</h4>
-                <p class="desc">Tempe penyet pedas + nasi. Cocok buat “mager masak”.</p>
-
-                <details class="accordion">
-                    <summary>Lihat detail tempat</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Info</h4>
-                                <ul>
-                                    <li><strong>Kisaran harga:</strong> Rp 10-18k</li>
-                                    <li><strong>Vibe:</strong> makan cepat</li>
-                                    <li><strong>Best time:</strong> sore-malam</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Rekomendasi pesanan</h4>
-                                <ul>
-                                    <li>Tempe penyet + nasi</li>
-                                    <li>Tambah telur (opsional)</li>
-                                    <li>Es teh manis</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-
-                <a class="place-link2" href="https://maps.app.goo.gl/VhZ7hbbqqfULPTS56" target="_blank" rel="noopener">Buka Maps →</a>
-            </div>
-        </article>
-
-        <!-- TEMPAT 2 -->
-        <article class="place-card2">
-            <div class="place-media2">
-                <img src="media/tempe mendoan.jpg" alt="Burjo Nongol Semarang" />
-                <div class="place-overlay2">
-                    <span class="tag-place">Kuliner</span>
-                    <span class="meta-place">Rp 8-15k • nongkrong</span>
-                </div>
-            </div>
-            <div class="place-content2">
-                <h4>Burjo Nongol Semarang</h4>
-                <p class="desc">Mendoan hangat + menu murah meriah. Enak buat nongkrong.</p>
-
-                <details class="accordion">
-                    <summary>Lihat detail tempat</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Info</h4>
-                                <ul>
-                                    <li><strong>Kisaran harga:</strong> Rp 8-15k</li>
-                                    <li><strong>Vibe:</strong> santai</li>
-                                    <li><strong>Cocok:</strong> ngobrol</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Rekomendasi pesanan</h4>
-                                <ul>
-                                    <li>Mendoan + sambal kecap</li>
-                                    <li>Indomie + telur</li>
-                                    <li>Teh panas / es</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-
-                <a class="place-link2" href="https://maps.app.goo.gl/oMuWYhfCRHs2EFWz6" target="_blank" rel="noopener">Buka Maps →</a>
-            </div>
-        </article>
-
-        <!-- TEMPAT 3 -->
-        <article class="place-card2">
-            <div class="place-media2">
-                <img src="media/resep 8.jpg" alt="Warung Makan Dapur Karuni" />
-                <div class="place-overlay2">
-                    <span class="tag-place">Kuliner</span>
-                    <span class="meta-place">Rp 12-22k • porsi aman</span>
-                </div>
-            </div>
-            <div class="place-content2">
-                <h4>Warung Makan Dapur Karuni</h4>
-                <p class="desc">Lauk banyak, orek tempe pedasnya juara. Ramah dompet.</p>
-
-                <details class="accordion">
-                    <summary>Lihat detail tempat</summary>
-                    <div class="acc-body">
-                        <div class="acc-grid">
-                            <div>
-                                <h4>Info</h4>
-                                <ul>
-                                    <li><strong>Kisaran harga:</strong> Rp 12-22k</li>
-                                    <li><strong>Vibe:</strong> warung</li>
-                                    <li><strong>Cocok:</strong> makan kenyang</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Rekomendasi pesanan</h4>
-                                <ul>
-                                    <li>Orek tempe pedas</li>
-                                    <li>Sayur + nasi</li>
-                                    <li>Tambah gorengan</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </details>
-
-                <a class="place-link2" href="https://maps.app.goo.gl/kx9NXwtgEQXsS8vW7" target="_blank" rel="noopener">Buka Maps →</a>
-            </div>
-        </article>
+        </div>
     </div>
 </section>
+
+<!-- Section Divider -->
+<div class="w-full h-12 bg-gradient-to-b from-surface to-surface-container-lowest"></div>
