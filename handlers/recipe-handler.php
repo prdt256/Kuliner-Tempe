@@ -3,19 +3,29 @@
  * Handler untuk pengiriman form resep
  */
 
-$resepBaru = null;
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Inisialisasi array resep user jika belum ada
+if (!isset($_SESSION["user_recipes"])) {
+    $_SESSION["user_recipes"] = [];
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["form_type"] ?? "") === "resep")) {
     $resepBaru = [
         "judul"    => $_POST["judul"] ?? "",
         "kategori" => $_POST["kategori"] ?? "",
         "biaya"    => $_POST["biaya"] ?? "",
-        "durasi"   => $_POST["durasi"] ?? "",
+        "durasi"   => trim(($_POST["durasi_val"] ?? "") . " " . ($_POST["durasi_unit"] ?? "")),
         "bahan"    => $_POST["bahan"] ?? "",
         "langkah"  => $_POST["langkah"] ?? "",
         "penulis"  => $_POST["penulis"] ?? "",
         "gambar"   => $_POST["gambar"] ?? "",
     ];
+
+    // Simpan ke session agar tidak menimpa
+    $_SESSION["user_recipes"][] = $resepBaru;
 
     // AJAX response
     if (isset($_POST["ajax"]) && $_POST["ajax"] === "1") {

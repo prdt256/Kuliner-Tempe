@@ -14,14 +14,15 @@ function esc(?string $s): string {
  * Generate HTML untuk card resep
  */
 function recipe_card_html(array $r): string {
-    $judul    = esc($r["judul"] ?? "");
-    $kategori = esc($r["kategori"] ?? "");
-    $biaya    = esc($r["biaya"] ?? "");
-    $durasi   = esc($r["durasi"] ?? "");
-    $penulis  = esc($r["penulis"] ?? "");
+    $judul    = esc($r["judul"] ?? "Resep Tempe");
+    $kategori = esc($r["kategori"] ?? "Umum");
+    $biaya    = esc($r["biaya"] ?? "-");
+    $durasi   = esc($r["durasi"] ?? "-");
+    $penulis  = esc($r["penulis"] ?? "Anonim");
 
     $gambarRaw = trim((string)($r["gambar"] ?? ""));
-    $gambar = $gambarRaw !== "" ? esc($gambarRaw) : "media/resep 4.jpg";
+    // Gunakan placeholder berkualitas tinggi jika gambar kosong
+    $gambar = $gambarRaw !== "" ? esc($gambarRaw) : "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop";
 
     // ubah baris menjadi list
     $bahanItems = "";
@@ -41,7 +42,7 @@ function recipe_card_html(array $r): string {
     if ($biaya)  $meta .= '<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span> '.$biaya.'</span>';
 
     return '
-    <article class="bg-surface-container-lowest rounded-[2.5rem] overflow-hidden border border-outline-variant/30 flex flex-col shadow-sm hover:shadow-xl transition-all duration-300">
+    <article class="bg-surface rounded-[2.5rem] overflow-hidden border border-outline-variant/30 flex flex-col shadow-sm hover:shadow-xl transition-all duration-300">
         <div class="h-64 overflow-hidden relative">
             <img src="'.$gambar.'" alt="'.$judul.'" class="w-full h-full object-cover">
             <span class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">'.$kategori.'</span>
@@ -69,7 +70,7 @@ function recipe_card_html(array $r): string {
                     </div>
                     <div>
                         <h4 class="font-label-bold text-on-surface mb-sm text-xs uppercase tracking-widest flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[18px]">instacart</span> Langkah
+                            <span class="material-symbols-outlined text-[18px]">menu_book</span> Langkah
                         </h4>
                         <ol class="list-decimal list-inside text-body-sm text-on-surface-variant space-y-1 ml-2">'.$langkahItems.'</ol>
                     </div>
