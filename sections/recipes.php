@@ -10,56 +10,29 @@
             </p>
         </div>
 
-        <!-- Grid Container -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg items-start">
-            
-            <!-- 1. Tampilkan Resep dari Session (Hasil Submit User) -->
             <?php 
-            if (isset($_SESSION["user_recipes"]) && !empty($_SESSION["user_recipes"])) {
-                foreach (array_reverse($_SESSION["user_recipes"]) as $userResep) {
-                    echo recipe_card_html($userResep);
+            require_once 'includes/db.php';
+            try {
+                $stmt = $pdo->query("
+                    SELECT r.*, k.nama_kategori as kategori 
+                    FROM resep r 
+                    LEFT JOIN kategori k ON r.kategori_id = k.id 
+                    ORDER BY r.id DESC LIMIT 3
+                ");
+                while ($row = $stmt->fetch()) {
+                    echo recipe_card_html($row);
                 }
+            } catch (Exception $e) {
+                echo "<p class='text-error col-span-full'>Gagal memuat resep: " . esc($e->getMessage()) . "</p>";
             }
             ?>
-
-            <!-- 2. Resep Statis (Contoh Bawaan) -->
-            <?php
-            // Resep Bawaan 1
-            echo recipe_card_html([
-                "judul" => "Tempe Bacem Legit",
-                "kategori" => "Harian",
-                "biaya" => "Rp 10-15k",
-                "durasi" => "20m",
-                "penulis" => "Tim Tempeku",
-                "gambar" => "media/resep 4.jpg",
-                "bahan" => "1 papan tempe\nBawang putih, gula merah, kecap\nDaun salam & lengkuas",
-                "langkah" => "Ungkep tempe dengan bumbu sampai meresap.\nGoreng atau panggang sebentar sebelum disajikan."
-            ]);
-
-            // Resep Bawaan 2
-            echo recipe_card_html([
-                "judul" => "Tempe Katsu BBQ",
-                "kategori" => "Mingguan",
-                "biaya" => "Rp 15-20k",
-                "durasi" => "25m",
-                "penulis" => "Chef Kos",
-                "gambar" => "media/resep 5.jpg",
-                "bahan" => "Tempe (iris tipis)\nTepung bumbu & tepung roti\nSaus barbeque instan",
-                "langkah" => "Balur tempe dengan tepung, goreng hingga krispi.\nSajikan dengan siraman saus BBQ hangat."
-            ]);
-
-            // Resep Bawaan 3
-            echo recipe_card_html([
-                "judul" => "Sambal Tempe",
-                "kategori" => "Favorit",
-                "biaya" => "Rp 10-15k",
-                "durasi" => "15m",
-                "penulis" => "Mbak Tempe",
-                "gambar" => "media/resep 7.jpg",
-                "bahan" => "Tempe goreng\nCabai, bawang, kemangi",
-                "langkah" => "Ulek sambal, penyet tempe, tambahkan kemangi."
-            ]);
-            ?>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="daftar-resep.php" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
+                Lihat Semua Resep
+            </a>
         </div>
     </div>
 </section>

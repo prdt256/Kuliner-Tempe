@@ -66,39 +66,42 @@
                 <span class="material-symbols-outlined text-primary">storefront</span> Kuliner Hemat Terdekat
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
-                <!-- Place 1 -->
+                <?php
+                require_once 'includes/db.php';
+                try {
+                    $stmt = $pdo->query("SELECT * FROM restoran ORDER BY id DESC LIMIT 3");
+                    while ($tempat = $stmt->fetch()):
+                        $id = esc((string)$tempat['id']);
+                        $nama = esc($tempat['nama_restoran']);
+                        // memotong teks alamat agar tidak kepanjangan
+                        $alamat_lengkap = $tempat['alamat'];
+                        $alamat_singkat = esc(mb_strlen($alamat_lengkap) > 35 ? mb_substr($alamat_lengkap, 0, 35) . "..." : $alamat_lengkap);
+                        $gambar = esc($tempat['gambar'] ?: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop");
+                ?>
                 <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
                     <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
-                        <img src="media/tempe penyet.jpg" alt="Penyetan" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                        <img src="<?= $gambar ?>" alt="<?= $nama ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                     </div>
-                    <div class="flex flex-col justify-center">
-                        <h4 class="font-label-bold text-on-surface">Penyetan Mas Ipin</h4>
-                        <p class="text-xs text-on-surface-variant mb-sm">Rp 10-18k • Pedas Mantap</p>
-                        <a href="https://maps.app.goo.gl/VhZ7hbbqqfULPTS56" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
-                    </div>
-                </div>
-                <!-- Place 2 -->
-                <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
-                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
-                        <img src="media/tempe mendoan.jpg" alt="Burjo" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <h4 class="font-label-bold text-on-surface">Burjo Nongol</h4>
-                        <p class="text-xs text-on-surface-variant mb-sm">Rp 8-15k • Enak Buat Nongkrong</p>
-                        <a href="https://maps.app.goo.gl/oMuWYhfCRHs2EFWz6" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
+                    <div class="flex flex-col justify-center flex-1">
+                        <h4 class="font-label-bold text-on-surface"><?= $nama ?></h4>
+                        <p class="text-xs text-on-surface-variant mb-sm"><?= $alamat_singkat ?></p>
+                        <a href="detail-tempat.php?id=<?= $id ?>" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline mt-auto">
+                            Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </a>
                     </div>
                 </div>
-                <!-- Place 3 -->
-                <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
-                    <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
-                        <img src="media/resep 8.jpg" alt="Warung" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
-                    </div>
-                    <div class="flex flex-col justify-center">
-                        <h4 class="font-label-bold text-on-surface">Dapur Karuni</h4>
-                        <p class="text-xs text-on-surface-variant mb-sm">Rp 12-22k • Porsi Kenyang</p>
-                        <a href="https://maps.app.goo.gl/kx9NXwtgEQXsS8vW7" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline">Lihat Lokasi <span class="material-symbols-outlined text-xs">open_in_new</span></a>
-                    </div>
-                </div>
+                <?php 
+                    endwhile; 
+                } catch (Exception $e) {
+                    echo "<p class='text-error col-span-full'>Gagal memuat rekomendasi: " . esc($e->getMessage()) . "</p>";
+                }
+                ?>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="daftar-tempat.php" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
+                    Lihat Semua Tempat Kuliner
+                </a>
             </div>
         </div>
     </div>

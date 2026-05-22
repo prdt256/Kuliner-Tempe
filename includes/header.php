@@ -142,15 +142,16 @@
         <div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20 w-full max-w-max-width mx-auto">
             <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-primary cursor-pointer md:hidden">menu</span>
-                <a href="#beranda" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">TEMPEKU</a>
+                <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">TEMPEKU</a>
             </div>
             
             <div class="hidden md:flex items-center gap-xl">
-                <a href="#tentang-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Edukasi</a>
-                <a href="#pengolahan-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Pengolahan</a>
-                <a href="#rekomendasi" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Rekomendasi</a>
-                <a href="#resep" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Resep</a>
-                <a href="#form-resep" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
+                <a href="index.php#tentang-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Edukasi</a>
+                <a href="index.php#pengolahan-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Pengolahan</a>
+                <a href="daftar-tempat.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Tempat Kuliner</a>
+                <a href="daftar-resep.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Katalog Resep</a>
+                <a href="tambah-resep.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
+                <a href="tambah-tempat.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Tempat</a>
             </div>
 
             <div class="flex items-center gap-4">

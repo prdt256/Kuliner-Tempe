@@ -8,7 +8,7 @@
 require_once 'includes/functions.php';
 
 // 2. Load logic pengolahan form (POST/AJAX)
-require_once 'handlers/recipe-handler.php';
+// 2. Tidak lagi meng-load form handler di sini (dipindah ke masing-masing halaman)
 
 // 3. Render Header (HTML Head, Nav)
 include_once 'includes/header.php';
@@ -22,7 +22,6 @@ include_once 'includes/header.php';
     include_once 'sections/processing.php';
     include_once 'sections/recommendations.php';
     include_once 'sections/recipes.php';
-    include_once 'sections/form-resep.php';
     ?>
 </main>
 
