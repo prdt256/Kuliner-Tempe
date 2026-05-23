@@ -21,6 +21,12 @@ if (!$resep) {
 }
 
 include_once 'includes/header.php';
+?>
+<style>
+    /* Full Focus Immersive Mode */
+    nav { display: none !important; }
+</style>
+<?php
 
 // Prepare data
 $judul = esc($resep['judul']);

@@ -43,10 +43,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["form_type"] ?? "") === "t
                 'gambar'        => $gambar
             ]);
 
+            $gambarSrc = $gambar ?: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop";
+            $htmlPreview = '
+            <article class="bg-surface-container-lowest rounded-[2.5rem] overflow-hidden border border-outline-variant/30 flex flex-col shadow-sm">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="'.esc($gambarSrc).'" class="w-full h-full object-cover">
+                </div>
+                <div class="p-lg flex flex-col flex-1">
+                    <h3 class="font-headline-md text-headline-md text-on-surface mb-2">'.esc($nama_restoran).'</h3>
+                    <p class="text-body-sm text-on-surface-variant mb-6">'.esc($alamat).'</p>
+                    <p class="text-body-sm text-primary font-bold"><em>Preview Tampilan Kartu</em></p>
+                </div>
+            </article>';
+
             echo json_encode([
                 "ok" => true,
                 "message" => 'Tempat Kuliner "'.esc($nama_restoran).'" berhasil disimpan ke database!',
-                "html" => "" // Placeholder jika nanti mau ditampilkan via AJAX
+                "html" => $htmlPreview
             ]);
         } catch (Exception $e) {
             echo json_encode([

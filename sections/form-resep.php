@@ -9,7 +9,7 @@
             <p class="text-on-surface-variant mt-sm">Punya kreasi tempe yang unik dan murah? Bagikan ke sesama Sobat Kos!</p>
         </div>
 
-        <form class="space-y-lg" action="index.php#resep" method="post" id="recipeForm">
+        <form class="space-y-lg resep-form" action="tambah-resep.php" method="post" id="recipeForm">
             <input type="hidden" name="form_type" value="resep" />
 
             <!-- Row 1: Nama Resep & Kategori -->

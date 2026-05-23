@@ -75,6 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       showMsg(data.message || "Tempat Kuliner berhasil ditambahkan!", "success");
 
+      // Tampilkan Preview
+      const output = document.querySelector("#tempatList");
+      if (output && data.html) {
+          output.innerHTML = "<h3 class='text-center font-headline-sm text-primary mb-4'>✨ Preview Tempat Barumu ✨</h3>" + data.html;
+          output.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
       // Reset form
       form.reset();
 

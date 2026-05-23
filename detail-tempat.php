@@ -16,6 +16,12 @@ if (!$tempat) {
 }
 
 include_once 'includes/header.php';
+?>
+<style>
+    /* Full Focus Immersive Mode */
+    nav { display: none !important; }
+</style>
+<?php
 
 $nama = esc($tempat['nama_restoran']);
 $alamat = esc($tempat['alamat']);
