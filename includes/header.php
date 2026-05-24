@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -150,14 +155,25 @@
                 <a href="index.php#pengolahan-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Pengolahan</a>
                 <a href="daftar-tempat.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Tempat Kuliner</a>
                 <a href="daftar-resep.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Katalog Resep</a>
-                <a href="tambah-resep.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
-                <a href="tambah-tempat.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Tempat</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="tambah-resep.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
+                    <a href="tambah-tempat.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Tempat</a>
+                <?php endif; ?>
             </div>
 
             <div class="flex items-center gap-4">
-                <button class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95">
-                    Masuk
-                </button>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-label-bold text-on-surface">Halo, <?= htmlspecialchars($_SESSION['name'] ?? $_SESSION['username']) ?></span>
+                        <a href="logout.php" class="bg-error text-on-error px-6 py-2 rounded-full font-label-bold hover:shadow-lg hover:bg-error/90 transition-all active:scale-95 text-sm">
+                            Keluar
+                        </a>
+                    </div>
+                <?php else: ?>
+                    <a href="login.php" class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95 text-center inline-block">
+                        Masuk
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </nav>

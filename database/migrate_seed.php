@@ -64,6 +64,15 @@ try {
         deskripsi TEXT,
         FOREIGN KEY (restoran_id) REFERENCES restoran(id) ON DELETE CASCADE
     );
+
+    CREATE TABLE IF NOT EXISTS users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(100) NOT NULL UNIQUE,
+        password VARCHAR(255) NOT NULL,
+        name VARCHAR(100) NOT NULL,
+        role VARCHAR(50) DEFAULT 'user',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
     ";
     
     $pdo->exec($sql);
@@ -108,6 +117,14 @@ try {
             (2, 'Orek Tempe Kering', 22000, 'Orek tempe kering kriuk dan tahan lama.')
         ");
         echo "- Data menu restoran berhasil ditambahkan.\n<br>";
+    }
+
+    // Users
+    $stmt = $pdo->query("SELECT COUNT(*) FROM users");
+    if ($stmt->fetchColumn() == 0) {
+        $password_hash = password_hash('rahasia123', PASSWORD_DEFAULT);
+        $pdo->exec("INSERT INTO users (username, password, name, role) VALUES ('admin', '$password_hash', 'Administrator', 'admin')");
+        echo "- Data users (admin) berhasil ditambahkan.\n<br>";
     }
 
     echo "\n<br><strong>=== SEMUA MIGRASI DAN SEEDER SELESAI ===</strong>\n";
