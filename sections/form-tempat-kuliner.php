@@ -9,7 +9,7 @@
             <p class="text-on-surface-variant mt-sm">Punya warung tempe mendoan atau orek favorit? Bagikan lokasinya di sini!</p>
         </div>
 
-        <form class="space-y-lg kuliner-form" action="index.php#form-kuliner" method="post" id="kulinerForm">
+        <form class="space-y-lg kuliner-form" action="index.php#form-kuliner" method="post" id="kulinerForm" enctype="multipart/form-data">
             <input type="hidden" name="form_type" value="tempat_kuliner" />
 
             <!-- Row 1: Nama Restoran & Gambar -->
@@ -19,8 +19,9 @@
                     <input type="text" name="nama_restoran" required class="w-full h-14 px-lg rounded-xl border border-outline-variant bg-surface-bright focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all outline-none" placeholder="Contoh: Warung Mendoan Kang Jono" />
                 </div>
                 <div class="space-y-sm">
-                    <label class="block font-label-bold text-on-surface-variant">Link Gambar (opsional)</label>
-                    <input type="url" name="gambar" class="w-full h-14 px-lg rounded-xl border border-outline-variant bg-surface-bright focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all outline-none" placeholder="https://...jpg" />
+                    <label class="block font-label-bold text-on-surface-variant">Upload Media (Foto/Video)</label>
+                    <input type="file" name="media[]" multiple accept="image/*,video/*" class="w-full h-14 px-lg py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all outline-none" />
+                    <p class="text-[10px] text-on-surface-variant italic">* Bisa pilih beberapa file sekaligus.</p>
                 </div>
             </div>
 

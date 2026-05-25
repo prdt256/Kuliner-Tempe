@@ -14,7 +14,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["form_type"] ?? "") === "r
     $bahan    = $_POST["bahan"] ?? "";
     $langkah  = $_POST["langkah"] ?? "";
     $penulis  = $_POST["penulis"] ?? "";
-    $gambar   = $_POST["gambar"] ?? "";
+    
+    // Proses upload media
+    $mediaPaths = [];
+    if (isset($_FILES['media']) && !empty($_FILES['media']['name'][0])) {
+        $uploadDir = __DIR__ . '/../media/';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+        
+        $fileCount = count($_FILES['media']['name']);
+        for ($i = 0; $i < $fileCount; $i++) {
+            if ($_FILES['media']['error'][$i] === UPLOAD_ERR_OK) {
+                $fileName = basename($_FILES['media']['name'][$i]);
+                $uniqueName = time() . '_' . uniqid() . '_' . preg_replace("/[^a-zA-Z0-9.]/", "_", $fileName);
+                $targetFilePath = $uploadDir . $uniqueName;
+                
+                if (move_uploaded_file($_FILES['media']['tmp_name'][$i], $targetFilePath)) {
+                    $mediaPaths[] = 'media/' . $uniqueName;
+                }
+            }
+        }
+    }
+    
+    // Jika tidak ada upload, cek apakah ada link gambar (opsional) atau gunakan array kosong
+    $gambarInput = $_POST["gambar"] ?? "";
+    if (empty($mediaPaths) && !empty($gambarInput)) {
+        $mediaPaths[] = $gambarInput;
+    }
+    
+    $gambar = json_encode($mediaPaths);
 
     // AJAX response header
     if (isset($_POST["ajax"]) && $_POST["ajax"] === "1") {

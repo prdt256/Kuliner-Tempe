@@ -76,16 +76,18 @@
                         // memotong teks alamat agar tidak kepanjangan
                         $alamat_lengkap = $tempat['alamat'];
                         $alamat_singkat = esc(mb_strlen($alamat_lengkap) > 35 ? mb_substr($alamat_lengkap, 0, 35) . "..." : $alamat_lengkap);
-                        $gambar = esc($tempat['gambar'] ?: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop");
+                        $gambarRaw = $tempat['gambar'] ?? "";
+                        $firstMedia = get_first_media($gambarRaw, "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=500&auto=format&fit=crop");
+                        $mediaTag = render_media_tag($firstMedia, $nama, "w-full h-full object-cover group-hover:scale-110 transition-transform");
                 ?>
                 <div class="flex gap-md p-md bg-surface-container-low rounded-2xl border border-outline-variant/20 hover:bg-surface-bright transition-colors group">
                     <div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
-                        <img src="<?= $gambar ?>" alt="<?= $nama ?>" class="w-full h-full object-cover group-hover:scale-110 transition-transform" />
+                        <?= $mediaTag ?>
                     </div>
                     <div class="flex flex-col justify-center flex-1">
                         <h4 class="font-label-bold text-on-surface"><?= $nama ?></h4>
                         <p class="text-xs text-on-surface-variant mb-sm"><?= $alamat_singkat ?></p>
-                        <a href="detail-tempat.php?id=<?= $id ?>" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline mt-auto">
+                        <a href="<?= $base_url ?>index.php?page=tempat/detail&id=<?= $id ?>" target="_blank" class="text-primary text-xs font-bold flex items-center gap-1 hover:underline mt-auto">
                             Baca Selengkapnya <span class="material-symbols-outlined text-xs">arrow_forward</span>
                         </a>
                     </div>
@@ -99,7 +101,7 @@
             </div>
             
             <div class="text-center mt-8">
-                <a href="daftar-tempat.php" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
+                <a href="<?= $base_url ?>index.php?page=tempat/daftar" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
                     Lihat Semua Tempat Kuliner
                 </a>
             </div>

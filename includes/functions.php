@@ -11,6 +11,41 @@ function esc(?string $s): string {
 }
 
 /**
+ * Helper untuk mendapatkan media pertama dari JSON atau string
+ */
+function get_first_media(string $gambarRaw, string $fallback = "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop"): string {
+    if (empty(trim($gambarRaw))) {
+        return $fallback;
+    }
+    
+    $decoded = json_decode($gambarRaw, true);
+    if (json_last_error() === JSON_ERROR_NONE && is_array($decoded)) {
+        if (!empty($decoded)) {
+            return $decoded[0];
+        }
+        return $fallback;
+    }
+    
+    // Kalau bukan JSON (data lama), kembalikan raw
+    return $gambarRaw;
+}
+
+/**
+ * Helper untuk merender media tag (img atau video)
+ */
+function render_media_tag(string $src, string $alt = "", string $classes = "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"): string {
+    $src = esc($src);
+    $ext = strtolower(pathinfo($src, PATHINFO_EXTENSION));
+    $isVideo = in_array($ext, ['mp4', 'webm', 'ogg']);
+    
+    if ($isVideo) {
+        return '<video src="'.$src.'" class="'.$classes.'" autoplay muted loop playsinline></video>';
+    } else {
+        return '<img src="'.$src.'" alt="'.esc($alt).'" class="'.$classes.'">';
+    }
+}
+
+/**
  * Generate HTML untuk card resep
  */
 function recipe_card_html(array $r): string {
@@ -22,19 +57,20 @@ function recipe_card_html(array $r): string {
     $penulis  = esc($r["penulis"] ?? "Anonim");
 
     $gambarRaw = trim((string)($r["gambar"] ?? ""));
-    // Gunakan placeholder berkualitas tinggi jika gambar kosong
-    $gambar = $gambarRaw !== "" ? esc($gambarRaw) : "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop";
+    $firstMedia = get_first_media($gambarRaw);
+    $mediaTag = render_media_tag($firstMedia, $judul, "w-full h-full object-cover");
 
     $meta = "";
     if ($durasi) $meta .= '<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> '.$durasi.'</span>';
     if ($biaya)  $meta .= '<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">payments</span> '.$biaya.'</span>';
 
-    $linkHref = $id !== "#" ? "detail-resep.php?id=$id" : "#";
+    global $base_url;
+    $linkHref = $id !== "#" ? $base_url . "index.php?page=resep/detail&id=$id" : "#";
 
     return '
     <article class="bg-surface rounded-[2.5rem] overflow-hidden border border-outline-variant/30 flex flex-col shadow-sm hover:shadow-xl transition-all duration-300">
         <div class="h-64 overflow-hidden relative">
-            <img src="'.$gambar.'" alt="'.$judul.'" class="w-full h-full object-cover">
+            '.$mediaTag.'
             <span class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">'.$kategori.'</span>
         </div>
         <div class="p-lg flex flex-col flex-1">

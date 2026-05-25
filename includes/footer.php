@@ -25,8 +25,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="assets/js/form.js"></script>
-    <script src="assets/js/form-kuliner.js"></script>
-    <script src="assets/js/search.js?v=10"></script>
+    <script src="<?= $base_url ?>assets/js/form.js"></script>
+    <script src="<?= $base_url ?>assets/js/form-kuliner.js"></script>
+    <script src="<?= $base_url ?>assets/js/search.js?v=10"></script>
 </body>
 </html>

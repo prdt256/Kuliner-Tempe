@@ -1,4 +1,5 @@
 <?php
+$base_url = '/TEMPEKU/';
 /**
  * Konfigurasi Koneksi Database Menggunakan PDO
  */

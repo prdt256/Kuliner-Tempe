@@ -1,8 +1,3 @@
-<?php
-require_once 'includes/db.php';
-require_once 'includes/functions.php';
-include_once 'includes/header.php';
-?>
 <main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop bg-surface min-h-screen">
     <div class="max-w-max-width mx-auto">
         <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
@@ -11,7 +6,7 @@ include_once 'includes/header.php';
                 <p class="text-body-lg text-on-surface-variant">Kumpulan kreasi tempe lezat dan murah dari komunitas Sobat Kos.</p>
             </div>
             <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="tambah-resep.php" target="_blank" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-xl font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95">
+                <a href="<?= $base_url ?>index.php?page=resep/tambah" target="_blank" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-xl font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95">
                     <span class="material-symbols-outlined">add</span> Bagi Resepmu
                 </a>
             <?php else: ?>
@@ -20,7 +15,7 @@ include_once 'includes/header.php';
                         <span class="material-symbols-outlined text-2xl">campaign</span>
                         <p class="text-sm font-label-bold">Menarik kan? Mau ikut bagi resep?</p>
                     </div>
-                    <a href="login.php" class="text-sm bg-primary text-on-primary px-4 py-2 rounded-lg font-label-bold hover:bg-primary/90 transition-colors w-full text-center">Masuk Dulu Yuk!</a>
+                    <a href="<?= $base_url ?>index.php?page=login" class="text-sm bg-primary text-on-primary px-4 py-2 rounded-lg font-label-bold hover:bg-primary/90 transition-colors w-full text-center">Masuk Dulu Yuk!</a>
                 </div>
             <?php endif; ?>
         </div>
@@ -44,4 +39,3 @@ include_once 'includes/header.php';
         </div>
     </div>
 </main>
-<?php include_once 'includes/footer.php'; ?>

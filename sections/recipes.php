@@ -30,7 +30,7 @@
         </div>
         
         <div class="text-center mt-12">
-            <a href="daftar-resep.php" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
+            <a href="<?= $base_url ?>index.php?page=resep/daftar" class="inline-block border border-primary text-primary px-8 py-3 rounded-full font-label-bold hover:bg-primary/5 transition-colors">
                 Lihat Semua Resep
             </a>
         </div>

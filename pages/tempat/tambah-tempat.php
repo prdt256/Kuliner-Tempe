@@ -3,12 +3,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: " . $base_url . "index.php?page=login");
     exit;
 }
-require_once 'includes/db.php';
 require_once 'handlers/tempat-kuliner-handler.php';
-include_once 'includes/header.php';
 ?>
 <main class="pt-24 pb-24">
     <?php include_once 'sections/form-tempat-kuliner.php'; ?>
@@ -16,4 +14,3 @@ include_once 'includes/header.php';
         <!-- Preview will appear here -->
     </div>
 </main>
-<?php include_once 'includes/footer.php'; ?>

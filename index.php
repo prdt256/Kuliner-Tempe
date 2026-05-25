@@ -1,31 +1,21 @@
 <?php
-/**
- * TEMPEKU - Website Inspirasi Resep Tempe
- * File ini sekarang berfungsi sebagai "Entry Point" (Kerangka Utama)
- */
+require_once "includes/db.php";
+require_once "includes/functions.php";
 
-// 1. Load semua fungsi pembantu
-require_once 'includes/functions.php';
+$routes = require "routes.php";
+$page = $_GET["page"] ?? "home";
 
-// 2. Load logic pengolahan form (POST/AJAX)
-// 2. Tidak lagi meng-load form handler di sini (dipindah ke masing-masing halaman)
+// Logout handler (tanpa layout UI)
+if ($page === "logout") {
+    require $routes["logout"];
+    exit;
+}
 
-// 3. Render Header (HTML Head, Nav)
-include_once 'includes/header.php';
-?>
+if (!array_key_exists($page, $routes) || !file_exists($routes[$page])) {
+    $page = "home"; // fallback jika rute salah
+}
 
-<main>
-    <?php
-    // 4. Render Section-Section Konten
-    include_once 'sections/hero.php';
-    include_once 'sections/about.php';
-    include_once 'sections/processing.php';
-    include_once 'sections/recommendations.php';
-    include_once 'sections/recipes.php';
-    ?>
-</main>
-
-<?php
-// 5. Render Footer (Scripts, Penutup HTML)
-include_once 'includes/footer.php';
-?>
+// Render UI
+include_once "includes/header.php";
+require $routes[$page];
+include_once "includes/footer.php";

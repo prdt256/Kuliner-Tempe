@@ -9,7 +9,7 @@
             <p class="text-on-surface-variant mt-sm">Punya kreasi tempe yang unik dan murah? Bagikan ke sesama Sobat Kos!</p>
         </div>
 
-        <form class="space-y-lg resep-form" action="tambah-resep.php" method="post" id="recipeForm">
+        <form class="space-y-lg resep-form" action="<?= $base_url ?>index.php?page=resep/tambah" method="post" id="recipeForm" enctype="multipart/form-data">
             <input type="hidden" name="form_type" value="resep" />
 
             <!-- Row 1: Nama Resep & Kategori -->
@@ -65,8 +65,9 @@
             <!-- Link Gambar & Penulis -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
                 <div class="space-y-sm">
-                    <label class="block font-label-bold text-on-surface-variant">Link Gambar (opsional)</label>
-                    <input type="url" name="gambar" class="w-full h-14 px-lg rounded-xl border border-outline-variant bg-surface-bright focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all outline-none" placeholder="https://...jpg" />
+                    <label class="block font-label-bold text-on-surface-variant">Upload Media (Foto/Video)</label>
+                    <input type="file" name="media[]" multiple accept="image/*,video/*" class="w-full h-14 px-lg py-3 rounded-xl border border-outline-variant bg-surface-bright focus:border-primary-container focus:ring-4 focus:ring-primary-container/20 transition-all outline-none" />
+                    <p class="text-[10px] text-on-surface-variant italic">* Bisa pilih beberapa file sekaligus.</p>
                 </div>
                 <div class="space-y-sm">
                     <label class="block font-label-bold text-on-surface-variant">Nama Pengirim <span class="text-error">*</span></label>

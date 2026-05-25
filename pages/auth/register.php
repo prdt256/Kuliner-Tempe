@@ -1,13 +1,10 @@
 <?php
-require_once 'includes/db.php';
-require_once 'includes/functions.php';
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+    header("Location: " . $base_url . "index.php");
     exit;
 }
 
@@ -39,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include_once 'includes/header.php';
 ?>
 
 <main class="min-h-screen flex items-center justify-center py-20 px-4 mt-20">
@@ -87,9 +83,8 @@ include_once 'includes/header.php';
         </form>
         
         <div class="mt-6 text-center text-sm text-on-surface-variant">
-            Sudah punya akun? <a href="login.php" class="text-primary hover:underline font-label-bold">Masuk di sini</a>
+            Sudah punya akun? <a href="<?= $base_url ?>index.php?page=login" class="text-primary hover:underline font-label-bold">Masuk di sini</a>
         </div>
     </div>
 </main>
 
-<?php include_once 'includes/footer.php'; ?>

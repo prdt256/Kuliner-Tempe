@@ -147,17 +147,17 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20 w-full max-w-max-width mx-auto">
             <div class="flex items-center gap-4">
                 <span class="material-symbols-outlined text-primary cursor-pointer md:hidden">menu</span>
-                <a href="index.php" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">TEMPEKU</a>
+                <a href="<?= $base_url ?>index.php" class="font-headline-md text-headline-md font-bold text-primary tracking-tight">TEMPEKU</a>
             </div>
             
             <div class="hidden md:flex items-center gap-xl">
-                <a href="index.php#tentang-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Edukasi</a>
-                <a href="index.php#pengolahan-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Pengolahan</a>
-                <a href="daftar-tempat.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Tempat Kuliner</a>
-                <a href="daftar-resep.php" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Katalog Resep</a>
+                <a href="<?= $base_url ?>index.php#tentang-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Edukasi</a>
+                <a href="<?= $base_url ?>index.php#pengolahan-tempe" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Pengolahan</a>
+                <a href="<?= $base_url ?>index.php?page=tempat/daftar" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Tempat Kuliner</a>
+                <a href="<?= $base_url ?>index.php?page=resep/daftar" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Katalog Resep</a>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="tambah-resep.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
-                    <a href="tambah-tempat.php" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Tempat</a>
+                    <a href="<?= $base_url ?>index.php?page=resep/tambah" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Resep</a>
+                    <a href="<?= $base_url ?>index.php?page=tempat/tambah" target="_blank" class="nav-link text-on-surface-variant hover:text-primary transition-all font-label-bold">Bagi Tempat</a>
                 <?php endif; ?>
             </div>
 
@@ -165,12 +165,12 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="flex items-center gap-3">
                         <span class="text-sm font-label-bold text-on-surface">Halo, <?= htmlspecialchars($_SESSION['name'] ?? $_SESSION['username']) ?></span>
-                        <a href="logout.php" class="bg-error text-on-error px-6 py-2 rounded-full font-label-bold hover:shadow-lg hover:bg-error/90 transition-all active:scale-95 text-sm">
+                        <a href="<?= $base_url ?>index.php?page=logout" class="bg-error text-on-error px-6 py-2 rounded-full font-label-bold hover:shadow-lg hover:bg-error/90 transition-all active:scale-95 text-sm">
                             Keluar
                         </a>
                     </div>
                 <?php else: ?>
-                    <a href="login.php" class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95 text-center inline-block">
+                    <a href="<?= $base_url ?>index.php?page=login" class="bg-primary text-on-primary px-8 py-2.5 rounded-full font-label-bold hover:shadow-lg hover:bg-primary/90 transition-all active:scale-95 text-center inline-block">
                         Masuk
                     </a>
                 <?php endif; ?>
