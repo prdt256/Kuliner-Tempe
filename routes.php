@@ -11,4 +11,5 @@ return [
     "tempat/daftar" => "pages/tempat/daftar-tempat.php",
     "tempat/detail" => "pages/tempat/detail-tempat.php",
     "tempat/tambah" => "pages/tempat/tambah-tempat.php",
+    "tampilan" => "pages/tampilan/kuliner.php"
 ];

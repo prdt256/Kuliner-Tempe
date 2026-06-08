@@ -6,7 +6,7 @@ $base_url = '/TEMPEKU/';
 
 $db_host = 'localhost';
 $db_user = 'root';
-$db_pass = 'akar'; // Sesuaikan dengan password database local Anda (biasanya kosong atau 'root')
+$db_pass = ''; // Sesuaikan dengan password database local Anda (biasanya kosong atau 'root')
 $db_name = 'tempeku';
 
 try {
