@@ -17,18 +17,37 @@ Aplikasi ini telah sepenuhnya dimigrasi dari arsitektur PHP Native ke arsitektur
 
 ---
 
-## 🔐 Kredensial Administrator & Akses Sistem
+## 🔐 Akun Uji Coba & Hak Akses (Roles)
 
-* **Portal Login Admin:** 
-  * URL Langsung: `/TEMPEKU/public/index.php/admin/login`
-  * Legacy URL (Auto-Redirect): `/TEMPEKU/index.php?page=login-admin`
-* **Kredensial Default Admin:**
-  * **Username:** `admin`
-  * **Password:** `rahasia123`
+Dalam aplikasi TEMPEKU, terdapat dua role pengguna: **Administrator** dan **Pengguna Biasa (User)**.
 
-* **Dashboard Pengelola Admin:**
-  * URL: `/TEMPEKU/public/index.php/admin`
-  * Fitur: Manajemen resep (CRUD), manajemen tempat kuliner, manajemen kategori, statistik pengguna.
+### 1. Kredensial Akun Default
+| Role | Username | Password | Keterangan |
+| :--- | :--- | :--- | :--- |
+| **Administrator** | `admin` | `rahasia123` | Akses penuh dashboard manajemen sistem |
+| **User Biasa** | `udin` | `user123` | Akun anggota komunitas (Sobat Kos) |
+
+> 💡 **Catatan:** Anda juga dapat mendaftarkan akun baru kapan saja melalui halaman **Daftar Akun** (`/register`). Setiap akun yang didaftarkan secara mandiri otomatis memiliki role `user`.
+
+---
+
+## ⚖️ Perbedaan Hak Akses: Admin vs User Biasa
+
+| Fitur / Kemampuan | User Biasa (`role: user`) | Administrator (`role: admin`) |
+| :--- | :---: | :---: |
+| **Melihat Katalog Resep & Detail Resep** | ✅ Ya | ✅ Ya |
+| **Melihat Direktori Tempat Kuliner & Menu** | ✅ Ya | ✅ Ya |
+| **Pencarian Real-time (Livewire Search)** | ✅ Ya | ✅ Ya |
+| **Menambahkan Resep Baru (`/resep/tambah`)** | ✅ Ya (Otomatis tercatat nama user) | ✅ Ya |
+| **Menambahkan Tempat Kuliner (`/tempat/tambah`)** | ✅ Ya (Otomatis tercatat nama user) | ✅ Ya |
+| **Akses Portal Admin (`/admin/login`)** | ❌ Ditolak | ✅ Ya |
+| **Akses Dashboard Manajemen (`/admin`)** | ❌ 403 Forbidden | ✅ Ya |
+| **Navigasi Khusus Admin di Header (Shield Icon)** | ❌ Sembunyi | ✅ Muncul |
+| **Menghapus Resep Komunitas** | ❌ Tidak bisa | ✅ Ya (Hapus kapan saja) |
+| **Menghapus Tempat Kuliner & Relasi Menu** | ❌ Tidak bisa | ✅ Ya (Cascade delete) |
+| **Menambah Kategori Resep Baru** | ❌ Tidak bisa | ✅ Ya (Form instan via Livewire) |
+| **Menghapus Kategori Resep** | ❌ Tidak bisa | ✅ Ya |
+| **Melihat Statistik Pengguna & Konten** | ❌ Tidak bisa | ✅ Ya (Widget 4 Kartu Metrik) |
 
 ---
 
