@@ -60,25 +60,6 @@
     --color-error-container: #ffdad6;
     --color-on-error: #ffffff;
     --color-on-error-container: #93000a;
-
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2.5rem;
-    --spacing-gutter: 1rem;
-    --spacing-margin-mobile: 1rem;
-    --spacing-margin-desktop: 5rem;
-    --spacing-max-width: 1280px;
-
-    --font-headline-xl: "Plus Jakarta Sans", sans-serif;
-    --font-headline-lg: "Plus Jakarta Sans", sans-serif;
-    --font-headline-md: "Plus Jakarta Sans", sans-serif;
-    --font-headline-sm: "Plus Jakarta Sans", sans-serif;
-    --font-body-lg: "Inter", sans-serif;
-    --font-body-md: "Inter", sans-serif;
-    --font-body-sm: "Inter", sans-serif;
-    --font-label-bold: "Inter", sans-serif;
 }
 
 /* Material Symbols Outlined settings */
@@ -105,4 +86,97 @@ html {
     width: 100%;
     height: 2px;
     background-color: #006d36;
+}
+
+/* Explicit Spacing Utilities (Safe from Tailwind v4 collision) */
+.p-xl { padding: 2.5rem; }
+.py-xl { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.px-xl { padding-left: 2.5rem; padding-right: 2.5rem; }
+.p-lg { padding: 1.5rem; }
+.py-lg { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.px-lg { padding-left: 1.5rem; padding-right: 1.5rem; }
+.p-md { padding: 1rem; }
+.py-md { padding-top: 1rem; padding-bottom: 1rem; }
+.px-md { padding-left: 1rem; padding-right: 1rem; }
+
+.gap-xl { gap: 2.5rem; }
+.gap-lg { gap: 1.5rem; }
+.gap-md { gap: 1rem; }
+.gap-sm { gap: 0.5rem; }
+
+.mb-xl { margin-bottom: 2.5rem; }
+.mb-lg { margin-bottom: 1.5rem; }
+.mb-md { margin-bottom: 1rem; }
+.mb-sm { margin-bottom: 0.5rem; }
+.mb-xs { margin-bottom: 0.25rem; }
+
+.max-w-max-width { max-width: 1280px; }
+.px-margin-desktop { padding-left: 5rem; padding-right: 5rem; }
+.px-margin-mobile { padding-left: 1rem; padding-right: 1rem; }
+
+/* Explicit Typography & Font Classes */
+.font-headline-xl, .text-headline-xl {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+.font-headline-lg, .text-headline-lg {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+.font-headline-md, .text-headline-md {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.font-headline-sm, .text-headline-sm {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+}
+.font-body-lg, .text-body-lg {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.font-body-md, .text-body-md {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.font-body-sm, .text-body-sm {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.font-label-bold, .text-label-bold {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .px-margin-desktop {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .font-headline-xl, .text-headline-xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .font-headline-lg, .text-headline-lg {
+        font-size: 26px;
+        line-height: 34px;
+    }
 }

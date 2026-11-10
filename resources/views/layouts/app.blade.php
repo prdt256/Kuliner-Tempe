@@ -21,8 +21,8 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md shadow-sm border-b border-outline-variant/20">
         <div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-20 w-full max-w-max-width mx-auto">
             <div class="flex items-center gap-4">
-                <button type="button" @click="mobileOpen = !mobileOpen" class="material-symbols-outlined text-primary md:hidden text-2xl focus:outline-none">
-                    menu
+                <button type="button" @click="mobileOpen = !mobileOpen" class="md:hidden text-primary text-2xl focus:outline-none p-1 flex items-center">
+                    <span class="material-symbols-outlined">menu</span>
                 </button>
                 <a href="{{ url('/') }}" wire:navigate class="font-headline-md text-headline-md font-bold text-primary tracking-tight flex items-center gap-2">
                     <span class="material-symbols-outlined text-2xl">eco</span>

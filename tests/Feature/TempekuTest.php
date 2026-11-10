@@ -92,3 +92,4 @@ class TempekuTest extends TestCase
         $this->actingAs($admin)->get('/admin')->assertStatus(200)->assertSee('Dashboard Manajemen Tempeku');
     }
 }
+

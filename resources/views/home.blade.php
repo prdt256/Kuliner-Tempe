@@ -9,7 +9,7 @@
         <div class="z-10 order-2 md:order-1">
             <span class="inline-block px-4 py-1 bg-primary-container text-on-primary-container rounded-full text-label-bold mb-md uppercase tracking-wider text-xs">Pilihan Sobat Kos</span>
             <h1 class="font-headline-xl text-headline-xl text-on-surface mb-lg">Inspirasi Tempe untuk Sobat Kos</h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">Ubah menu harianmu menjadi gaya hidup sehat yang terjangkau. Temukan ratusan resep tempe kreatif yang ramah di kantong mahasiswa namun tetap kaya nutrisi dan rasa.</p>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-xl">Ubah menu harianmu menjadi gaya hidup sehat yang terjangkau. Temukan ratusan resep tempe kreatif yang ramah di kantong mahasiswa namun tetap kaya nutrisi dan rasa.</p>
             <div class="flex flex-wrap gap-md">
                 <a href="{{ route('resep.index') }}" wire:navigate class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-bold text-label-bold hover:shadow-lg transition-all active:scale-95 flex items-center gap-2 no-underline">
                     Lihat Resep <span class="material-symbols-outlined">arrow_forward</span>

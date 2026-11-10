@@ -1,5 +1,14 @@
 <?php
 
+// Ensure URL contains index.php under Apache subfolder without mod_rewrite AllowOverride
+$reqUri = $_SERVER['REQUEST_URI'] ?? '';
+$reqPath = parse_url($reqUri, PHP_URL_PATH) ?? '';
+if (rtrim($reqPath, '/') === '/TEMPEKU/public') {
+    $qs = !empty($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '';
+    header('Location: /TEMPEKU/public/index.php' . $qs, true, 302);
+    exit;
+}
+
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
